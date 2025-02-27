@@ -16,23 +16,24 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      {/* <Route path="/customer-dashboard" element={<CustomerDashboard/>} /> */}
-      <Route
+      <Route path="/customer-dashboard" element={<CustomerDashboard/>} />
+      <Route path="/admin-dashboard" element={<AdminDashboard/>} />
+      {/* <Route
         path="/admin-dashboard"
         element={
           <ProtectedRoute allowedRoles={["admin"]} userRole={Role}>
             <AdminDashboard/>
           </ProtectedRoute>
         }
-      /> 
-       <Route
+      />  */}
+       {/* <Route
         path="/customer-dashboard"
         element={
           <ProtectedRoute allowedRoles={["admin","customer"]} userRole={Role}>
             <CustomerDashboard/>
           </ProtectedRoute>
         }
-      /> 
+      />  */}
 
     </Routes>
   );

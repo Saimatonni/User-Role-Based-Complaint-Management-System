@@ -14,7 +14,7 @@ A web-based support ticketing system that allows customers to submit complaints,
 
 ---
 
-## **Features**
+<!-- ## **Features**
 
 - **Customer Dashboard**:
   - Create, view, update, and delete complaint tickets.
@@ -28,11 +28,11 @@ A web-based support ticketing system that allows customers to submit complaints,
   - Login with email and password for both customer and admin roles.
   - Role-based redirection to different dashboards based on the user role.
 
----
+--- -->
 
 ## **Demo**
 
-- **Live Demo**: [https://yourdemoapp.com](https://yourdemoapp.com) 
+- **Live Demo**: https://drive.google.com/file/d/103lXBS0hhjsA3OWXzFWd2_F8AfF7n4ZV/view?usp=drive_link
 
 ---
 
@@ -46,7 +46,7 @@ First, clone the repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/Saimatonni/User-Role-Based-Complaint-Management-System.git
-'''
+```
 
 ---
 
@@ -79,6 +79,12 @@ Run the backend server:
 
 ```bash
 npm start
+```
+
+Will able to see these:
+```bash
+Server running on port 5001
+✅ Database connected successfully
 ```
 
 The backend should now be running at [http://localhost:5001](http://localhost:5001).
