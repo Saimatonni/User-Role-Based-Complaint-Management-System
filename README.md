@@ -253,7 +253,7 @@ Authorization: Bearer <your_jwt_token_here>
 
 ---
 
-## 5. Get All Complaints (Admin Only)
+### 5. Get All Complaints (Admin Only)
 **Endpoint:** `GET /api/complaints/all`
 
 **Headers:**
@@ -277,7 +277,7 @@ Authorization: Bearer <your_jwt_token_here>
 
 ---
 
-## 6. Get Complaint by ID
+### 6. Get Complaint by ID
 **Endpoint:** `GET /api/complaints/:id`
 
 **Headers:**
@@ -299,7 +299,7 @@ Authorization: Bearer <your_jwt_token_here>
 
 ---
 
-## 7. Update Complaint Status (Admin Only)
+### 7. Update Complaint Status (Admin Only)
 **Endpoint:** `PUT /api/complaints/:id`
 
 **Headers:**
@@ -321,7 +321,7 @@ Authorization: Bearer <your_jwt_token_here>
 
 ---
 
-## 8. Reply to Complaint (Admin/Executive Only)
+### 8. Reply to Complaint (Admin/Executive Only)
 **Endpoint:** `POST /api/complaints/:id/reply`
 
 **Headers:**
@@ -343,7 +343,7 @@ Authorization: Bearer <your_jwt_token_here>
 
 ---
 
-## 9. Delete Complaint
+### 9. Delete Complaint
 **Endpoint:** `DELETE /api/complaints/:id`
 
 **Headers:**
