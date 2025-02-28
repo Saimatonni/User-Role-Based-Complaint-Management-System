@@ -161,3 +161,201 @@ CREATE TABLE replies (
 
 ```
 
+## 5. API Testing Guide
+
+### 1. User Registration
+**Endpoint:** `POST /api/auth/register`
+
+**Request Body:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "123456",
+  "role": "customer"
+}
+```
+**Expected Response:**
+```json
+{
+  "message": "User registered successfully"
+}
+```
+
+---
+
+### 2. User Login
+**Endpoint:** `POST /api/auth/login`
+
+**Request Body:**
+```json
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+**Expected Response:**
+```json
+{
+  "message": "Login successful",
+  "token": "jwt_token_here",
+  "role": "customer"
+}
+```
+
+---
+
+### 3. Create Complaint
+**Endpoint:** `POST /api/complaints`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Request Body:**
+```json
+{
+  "subject": "Issue with Product",
+  "description": "The product I received is damaged."
+}
+```
+**Expected Response:**
+```json
+{
+  "message": "Complaint created successfully",
+  "ticket_id": 1
+}
+```
+
+---
+
+### 4. Get Complaints by Customer
+**Endpoint:** `GET /api/complaints`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Expected Response:**
+```json
+{
+  "complaints": [
+    {
+      "id": 1,
+      "subject": "Issue with Product",
+      "description": "The product I received is damaged.",
+      "status": "Open",
+      "customer_id": 1
+    }
+  ]
+}
+```
+
+---
+
+## 5. Get All Complaints (Admin Only)
+**Endpoint:** `GET /api/complaints/all`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Expected Response:**
+```json
+{
+  "complaints": [
+    {
+      "id": 1,
+      "subject": "Issue with Product",
+      "description": "The product I received is damaged.",
+      "status": "Open",
+      "customer_id": 1
+    }
+  ]
+}
+```
+
+---
+
+## 6. Get Complaint by ID
+**Endpoint:** `GET /api/complaints/:id`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Expected Response:**
+```json
+{
+  "complaint": {
+    "id": 1,
+    "subject": "Issue with Product",
+    "description": "The product I received is damaged.",
+    "status": "Open",
+    "customer_id": 1
+  }
+}
+```
+
+---
+
+## 7. Update Complaint Status (Admin Only)
+**Endpoint:** `PUT /api/complaints/:id`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Request Body:**
+```json
+{
+  "status": "Resolved"
+}
+```
+**Expected Response:**
+```json
+{
+  "message": "Complaint status updated successfully"
+}
+```
+
+---
+
+## 8. Reply to Complaint (Admin/Executive Only)
+**Endpoint:** `POST /api/complaints/:id/reply`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Request Body:**
+```json
+{
+  "reply": "We are working on resolving your issue."
+}
+```
+**Expected Response:**
+```json
+{
+  "message": "Reply added to complaint"
+}
+```
+
+---
+
+## 9. Delete Complaint
+**Endpoint:** `DELETE /api/complaints/:id`
+
+**Headers:**
+```
+Authorization: Bearer <your_jwt_token_here>
+```
+**Expected Response:**
+```json
+{
+  "message": "Complaint deleted successfully"
+}
+```
+
+
+
